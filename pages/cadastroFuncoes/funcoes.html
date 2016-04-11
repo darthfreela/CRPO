@@ -29,10 +29,14 @@
                     "info": "Mostrando _PAGE_ de _PAGES_ páginas",
                     "infoEmpty": "Nenhum registro encontrado",
                     "infoFiltered": "(filtrado apartir de  _MAX_ registros no total)",
-                    "search": "Pesquisar: ",
-                    "previous": "Anterior",
-                    "next": "Próximo"
+                    "search": "Pesquisar: "
+                },
+                "oLanguage": {
+                    "oPaginate": {
+                      "sPrevious": "Anterior",
+                      "sNext": "Próximo"
                 }
+              }
             });
         });
     </script>
@@ -83,7 +87,7 @@
                 <div class="user-panel">
                     <div class="pull-left image">
                         <img src="../../dist/img/logoCRPO160X160.png" class="img-circle" style="width: 70%; margin-left: 12%; height: 100px; max-width: 100%;">
-                    </div>                   
+                    </div>
                 </div>
                 <ul class="sidebar-menu">
                     <li class="header">CRPO SERRA</li>
@@ -167,13 +171,15 @@
                             <button class="btn btn-block btn-primary" onClick="window.location = '../../pages/cadastroFuncoes/funcoesNovo.html'">Novo</button>
                         </div>
                         </br>
-                       
+
                         <table id="motivos" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th></th>
                                     <th>Sigla</th>
                                     <th>Nome da Função</th>
+                                    <th>N° Vagas</th>
+                                    <th>Ativo</th>
                                     <th></th>
                                     <th></th>
                                 </tr>
@@ -183,41 +189,53 @@
                                     <td>1</td>
                                     <td>CH</td>
                                     <td>Chefe do CRPO serra</td>
+                                    <td>1</td>
+                                    <td>Sim</td>
                                     <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>CH</td>
+                                    <td>CHP1</td>
                                     <td>Chefe do P1</td>
+                                    <td>1</td>
+                                    <td>Sim</td>
                                     <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
-                                </tr>	
+                                </tr>
                                 <tr>
                                     <td>3</td>
-                                    <td>CH</td>
+                                    <td>CHP4</td>
                                     <td>Chefe do P4</td>
+                                    <td>1</td>
+                                    <td>Sim</td>
                                     <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
-                                    <td>CH</td>
+                                    <td>CHP3</td>
                                     <td>Chefe do P3</td>
+                                    <td>1</td>
+                                    <td>Sim</td>
                                     <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
-                                    <td>ANL</td>
+                                    <td>ANLP1</td>
                                     <td>Analista do P1</td>
+                                    <td>4</td>
+                                    <td>Sim</td>
                                     <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
                                 <tr>
                                     <td>6</td>
-                                    <td>ANL</td>
+                                    <td>ANLP2</td>
                                     <td>Analista do P2</td>
+                                    <td>7</td>
+                                    <td>Sim</td>
                                     <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
@@ -227,6 +245,8 @@
                                     <th></th>
                                     <th>Funções</th>
                                     <th>Nome da Função</th>
+                                    <th>N° Vagas</th>
+                                    <th>Ativo</th>
                                     <th></th>
                                     <th></th>
                                 </tr>
