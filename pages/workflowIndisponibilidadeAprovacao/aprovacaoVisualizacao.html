@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="../../plugins/select2/select2.min.css">
     <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">
     <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+	<link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker-bs3.css">
     <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <script src="../../bootstrap/js/bootstrap.min.js"></script>
     <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
@@ -20,25 +22,114 @@
     <script src="../../plugins/fastclick/fastclick.min.js"></script>
     <script src="../../dist/js/app.min.js"></script>
     <script src="../../dist/js/demo.js"></script>
+	<script src="../../plugins/select2/select2.full.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+	<script src="../../plugins/daterangepicker/daterangepicker.js"></script>
     <script>
-        $(function () {
-            $("#motivos").DataTable({
-                "language": {
-                    "lengthMenu": "Mostrar _MENU_ entradas",
-                    "zeroRecords": "Nenhum registro encontrado",
-                    "info": "Mostrando _PAGE_ de _PAGES_ páginas",
-                    "infoEmpty": "Nenhum registro encontrado",
-                    "infoFiltered": "(filtrado apartir de  _MAX_ registros no total)",
-                    "search": "Pesquisar: "
-                },
-                "oLanguage": {
-                    "oPaginate": {
-                      "sPrevious": "Anterior",
-                      "sNext": "Próximo"
-                }
-              }
-            });
-        });
+		var funcData = {
+		  "123456789": {
+			"id" : "123456789",
+			"name": "João da Silva Di no Sauro",
+			"grad": "MAJ QOEM"
+		  },
+		  "987654321": {
+			"id" : "987654321",
+			"name": "João da Silva Tira no Sauro",
+			"grad": "CAP QOEM"
+		  },
+			"666666666": {
+			"id" : "666666666",
+			"name": "Caim dos Santos de Jesus",
+			"grad": "1° SGT QPM-1"
+		  },
+			"000000000": {
+			"id" : "000000000",
+			"name": "Abel Pereira Silva",
+			"grad": "1 SGT QOM-1"
+		  }
+		};
+		
+		var cargoData = {
+			  "1": {
+				"id" : "1",
+				"cargo": "TEN CEL QOEM",
+				"funcao" : "CH DO EM DO CRPO SERRA",
+				"situacao" : "Vago",
+				"ocupante": "",
+				"motivoIndisponibilidade" : ""
+			  },
+			  "2": {
+				"id" : "2",
+				"cargo": "MAJ QOEM",
+				"funcao" : "CHEFE DO P1",
+				"situacao" : "Ocupado",
+				"ocupante": "José da Silva Rex",
+				"motivoIndisponibilidade" : "Férias"
+			  },
+				"3": {
+				"id" : "3",
+				"cargo": "MAJ QOEM",
+				"funcao" : "CHEFE DO P4",
+				"situacao" : "Ocupado",
+				"ocupante": "José da Silva Rex",
+				"motivoIndisponibilidade" : "Férias"
+			  },
+				"4": {
+				"id" : "4",
+				"cargo": "TEN CEL QOEM",
+				"funcao" : "1° TEN QTPM",
+				"situacao" : "Vago",
+				"ocupante": "",
+				"motivoIndisponibilidade" : ""
+			  }
+			}
+		
+		function addIdFuncOptions(){
+			var element = document.getElementById("idFunc");
+			$.each(funcData, function() {
+				var option = document.createElement("option");
+				option.text = this.id;
+				option.value = this.id;
+				element.add(option);
+			});
+			$("#idFunc").change();
+		}
+		
+		function addCargoDisponivelOptions(){
+			var element = document.getElementById("cargoDisponivel");
+			$.each(cargoData, function() {
+				var option = document.createElement("option");
+				option.text = this.id;
+				option.value = this.id;
+				element.add(option);
+			});
+			$("#cargoDisponivel").change();
+		}
+		
+		function listnerIdFunc(){
+			$("#idFunc").change(function(){
+				$("#nomeServidor").val(funcData[this.value].name);
+				$("#postoServidor").val(funcData[this.value].grad);
+			});		
+		}
+		
+		function listnerCargoDisponivel(){
+			$("#cargoDisponivel").change(function(){
+				$("#situacaoCargo").val(cargoData[this.value].situacao);
+				$("#ocupanteCargo").val(cargoData[this.value].ocupante);			
+				$("#motivoIndisponibilidade").val(cargoData[this.value].motivoIndisponibilidade);
+				$("#funcaoSuperiorExercida").val(cargoData[this.value].funcao);
+			});
+		}
+		
+		$(document).ready(function() {
+			listnerIdFunc();
+			listnerCargoDisponivel();
+			addIdFuncOptions();
+			addCargoDisponivelOptions();
+			$('select').select2();
+			$("#periodo").daterangepicker();
+		});
     </script>
     <style type="text/css">
         .btn-warning, .btn-danger {
@@ -92,7 +183,7 @@
                 </div>
                 <ul class="sidebar-menu">
                     <li class="header">CRPO SERRA</li>
-					<li class="treeview">
+					<li class=" treeview">
                         <a href="#">
                             <i class="fa fa-share"></i><span>Substituição Temporária</span>
                             <i class="fa fa-angle-left pull-right"></i>
@@ -101,9 +192,9 @@
                             <li><a href="../../pages/substituicaoTemporaria/edit.html"><i class="fa fa-circle-o"></i>Novo</a></li>
                         </ul>
                         <ul class="treeview-menu">
-					<li><a href="../../pages/substituicaoTemporaria/list.html"><i class="fa fa-circle-o"></i>Procurar</a></li>
+							<li><a href="../../pages/substituicaoTemporaria/list.html"><i class="fa fa-circle-o"></i>Procurar</a></li>
                         </ul>
-				   </li>
+					</li>
 					<li class="active treeview">
                         <a href="#">
                             <i class="fa fa-share"></i><span>Aprovar Indisponibilidade</span>
@@ -154,7 +245,7 @@
                             <li><a href="../../pages/apontamentoHoras/apontamento_horas.html"><i class="fa fa-circle-o"></i>Apontamento de Horas</a></li>
                             <li><a href="../../pages/solicitarDispensa/solicitar_dispensa.html"><i class="fa fa-circle-o"></i>Solicitar dispensa</a></li>
                         </ul>
-					</li>
+                    </li>
                 </ul>
             </section>
         </aside>
@@ -162,75 +253,69 @@
         <!-- CORPO -->
         <div class="content-wrapper">
             <section class="content">
-                <div class="box">
-                    <div class="box-header">
-                        <h3 class="box-title">Aprovar Indisponibilidade - RH</h3>
-                    </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                        </br>
-						<div style="overflow: scroll">
-							<table id="motivos" class="table table-bordered table-striped">
-								<thead>
-									<tr>
-										<th></th>
-										<th>Id Func.</th>
-										<th>Nome do Servidor</th>
-										<th>Posto Grad.</th>
-										<th>Função Exercida</th>
-										<th></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>1</td>
-										<td>2081597</td>
-										<td>João da Silva Di no Sauro</td>
-										<td>MAJ QOEM</td>
-										<td>CH DO EM DO CRPO SERRA</td>
-										<td><a class="btn btn-success" 
-										href="../../pages/workflowIndisponibilidadeAprovacao/aprovacaoVisualizacaoRh.html">
-										<i class="fa fa-check-square-o	 "></i>Visualizar</a>
-										</td>
-										</tr>
-									<tr>
-										<td>2</td>
-										<td>2181597</td>
-										<td>João da Silva Tira no Sauro</td>
-										<td>CAP QOEM</td>
-										<td>CHEFE DO P1</td>
-										<td><a class="btn btn-success" 
-										href="../../pages/workflowIndisponibilidadeAprovacao/aprovacaoVisualizacaoRh.html">
-										<i class="fa fa-check-square-o	 "></i>Visualizar</a>
-										</td>
-										</tr>
-									<tr>
-										<td>3</td>
-										<td>2181597</td>
-										<td>Caim dos Santos de Jesus</td>
-										<td>1° SGT QPM-1</td>
-										<td>CHEFE DO P4</td>
-										<td><a class="btn btn-success" 
-										href="../../pages/workflowIndisponibilidadeAprovacao/aprovacaoVisualizacaoRh.html">
-										<i class="fa fa-check-square-o	 "></i>Visualizar</a>
-										</td>
-										</tr>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<th></th>
-										<th>Id Func.</th>
-										<th>Nome do Servidor</th>
-										<th>Posto Grad.</th>
-										<th>Função Exercida</th>
-										<th></th>
-									</tr>
-								</tfoot>
-							</table>
+				<div class="box box-primary">
+					<div class="box-header with-border">
+						<h3 class="box-title">Aprovação Superior</h3>
+					</div>
+					<form role="form">
+						<div class="box-body">
+							<div class="row">
+								<div class="col-lg-2">
+									<div class="form-group">
+										<label for="idFunc">ID Func.</label>
+										<select class="form-control" id="idFunc"></select>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label for="nomeServidor">Nome do Servidor</label>
+										<input type="text" class="form-control" id="nomeServidor" placeholder="Nome do Servidor" disabled>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="form-group">
+										<label for="postoServidor">Posto Grad.</label>
+										<input type="text" class="form-control" id="postoServidor" placeholder="Posto Grad." disabled>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-3">
+									<div class="form-group">
+										<label for="motivoIndisponibilidade">Motivo de Indisponibilidade</label>
+										<input type="text" class="form-control" id="motivoIndisponibilidade" placeholder="Afastamento por motivo de saúde" disabled>
+									</div>
+								</div>
+								<div class="col-lg-3">
+									<div class="form-group">
+										<label for="funcaoSuperiorExercida">Função Exercida</label>
+										<input type="text" class="form-control" id="funcaoSuperiorExercida" placeholder="MAJ QOEM CH DO EM DO CRPO SERRA" disabled>
+									</div>
+								</div>
+								
+								<div class="col-md-12">
+									<div class="form-group col-md-2">
+										<label> Data de Inicio</label>
+                                        <input class="form-control" type="date" id="dtaIni" />
+									</div>	
+									<div style="float:left">										
+										<label><br></label>
+										<label class="form-control" style="border: 0px">a</label>
+									</div>
+									<div class="form-group col-md-2">
+                                        <label>Data de Término</label>
+                                        <input class="form-control" type="date" id="dtaFim"/>
+									</div>
+								</div>	
+							</div>							
+
 						</div>
-                    </div>
-                </div>
+						<div class="box-footer">
+							<button type="button" class="btn btn-warning" onClick="window.location = '../../pages/workflowIndisponibilidadeAprovacao/aprovacaoPorSuperior.html'">Permitir</button>
+							<button type="button" class="btn btn-danger" onClick="window.location = '../../pages/workflowIndisponibilidadeAprovacao/aprovacaoPorRh.html'">Negar</button>
+						</div>
+					</form>
+				</div>
             </section>
         </div>
         <!-- /CORPO -->

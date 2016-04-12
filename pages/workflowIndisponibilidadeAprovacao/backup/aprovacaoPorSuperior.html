@@ -101,9 +101,9 @@
                             <li><a href="../../pages/substituicaoTemporaria/edit.html"><i class="fa fa-circle-o"></i>Novo</a></li>
                         </ul>
                         <ul class="treeview-menu">
-					<li><a href="../../pages/substituicaoTemporaria/list.html"><i class="fa fa-circle-o"></i>Procurar</a></li>
+							<li><a href="../../pages/substituicaoTemporaria/list.html"><i class="fa fa-circle-o"></i>Procurar</a></li>
                         </ul>
-				   </li>
+					</li>
 					<li class="active treeview">
                         <a href="#">
                             <i class="fa fa-share"></i><span>Aprovar Indisponibilidade</span>
@@ -123,7 +123,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li>
-                                <a href="#"><i class="fa fa-circle-o"></i> Cadastros <i class="fa fa-angle-left pull-right"></i></a>
+                                <a href="#"><i class="fa fa-circle-o"></i> ' <i class="fa fa-angle-left pull-right"></i></a>
                                 <ul class="treeview-menu">
                                     <li><a href="../../pages/03companhias/companhias.html"><i class="fa fa-circle-o"></i>Companhias </a></li>
                                     <li><a href="../../pages/contingente/listaContigente.html"><i class="fa fa-circle-o"></i>Contigente</a></li>
@@ -154,7 +154,7 @@
                             <li><a href="../../pages/apontamentoHoras/apontamento_horas.html"><i class="fa fa-circle-o"></i>Apontamento de Horas</a></li>
                             <li><a href="../../pages/solicitarDispensa/solicitar_dispensa.html"><i class="fa fa-circle-o"></i>Solicitar dispensa</a></li>
                         </ul>
-					</li>
+                    </li>
                 </ul>
             </section>
         </aside>
@@ -164,7 +164,7 @@
             <section class="content">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Aprovar Indisponibilidade - RH</h3>
+                        <h3 class="box-title">Aprovar Indisponibilidade</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -178,6 +178,10 @@
 										<th>Nome do Servidor</th>
 										<th>Posto Grad.</th>
 										<th>Função Exercida</th>
+										<th>Motivo de Indisponibilidade</th>
+										<th>Data Inicial</th>
+										<th>Data Final</th>
+										<th></th>
 										<th></th>
 									</tr>
 								</thead>
@@ -188,33 +192,35 @@
 										<td>João da Silva Di no Sauro</td>
 										<td>MAJ QOEM</td>
 										<td>CH DO EM DO CRPO SERRA</td>
-										<td><a class="btn btn-success" 
-										href="../../pages/workflowIndisponibilidadeAprovacao/aprovacaoVisualizacaoRh.html">
-										<i class="fa fa-check-square-o	 "></i>Visualizar</a>
-										</td>
-										</tr>
+										<td>Afastamento por motivo de saúde</td>
+										<td>22/01/2016</td>
+										<td></td>
+										<td><a class="btn btn-warning"><i class="fa fa-edit"></i>Permitir</a></td>
+										<td><a class="btn btn-danger"><i class="fa fa-close "></i>Negar</a></td>
+									</tr>
 									<tr>
 										<td>2</td>
 										<td>2181597</td>
 										<td>João da Silva Tira no Sauro</td>
 										<td>CAP QOEM</td>
 										<td>CHEFE DO P1</td>
-										<td><a class="btn btn-success" 
-										href="../../pages/workflowIndisponibilidadeAprovacao/aprovacaoVisualizacaoRh.html">
-										<i class="fa fa-check-square-o	 "></i>Visualizar</a>
-										</td>
-										</tr>
+										<td>Férias</td>
+										<td>19/01/2016</td>
+										<td>06/02/2016</td>
+										<td><a class="btn btn-warning"><i class="fa fa-edit"></i>Permitir</a></td>
+										<td><a class="btn btn-danger"><i class="fa fa-close "></i>Negar</a></td>
+									</tr>
 									<tr>
 										<td>3</td>
 										<td>2181597</td>
 										<td>Caim dos Santos de Jesus</td>
 										<td>1° SGT QPM-1</td>
 										<td>CHEFE DO P4</td>
-										<td><a class="btn btn-success" 
-										href="../../pages/workflowIndisponibilidadeAprovacao/aprovacaoVisualizacaoRh.html">
-										<i class="fa fa-check-square-o	 "></i>Visualizar</a>
-										</td>
-										</tr>
+										<td>Férias</td>
+										<td>15/02/2016</td>
+										<td>27/02/2016</td>
+										<td><a class="btn btn-warning"><i class="fa fa-edit"></i>Permitir</a></td>
+										<td><a class="btn btn-danger"><i class="fa fa-close "></i>Negar</a></td>
 									</tr>
 								</tbody>
 								<tfoot>
@@ -224,6 +230,10 @@
 										<th>Nome do Servidor</th>
 										<th>Posto Grad.</th>
 										<th>Função Exercida</th>
+										<th>Motivo de Indisponibilidade</th>
+										<th>Data Inicial</th>
+										<th>Data Final</th>
+										<th></th>
 										<th></th>
 									</tr>
 								</tfoot>
