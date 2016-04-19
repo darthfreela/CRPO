@@ -8,54 +8,22 @@
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker-bs3.css">
-    <link rel="stylesheet" href="../../plugins/iCheck/all.css">
     <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
     <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+	<link rel="stylesheet" href="../../plugins/select2/select2.min.css">
     <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+	<script src="../../plugins/select2/select2.full.min.js"></script>
     <script src="../../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../../plugins/select2/select2.full.min.js"></script>
-    <script src="../../plugins/input-mask/jquery.inputmask.js"></script>
-    <script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-    <script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-    <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
-    <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
-    <script src="../../plugins/iCheck/icheck.min.js"></script>
     <script src="../../plugins/fastclick/fastclick.min.js"></script>
     <script src="../../dist/js/app.min.js"></script>
     <script src="../../dist/js/demo.js"></script>
-    <script>
+	<script>
         $(function () {
-            $(".select2").select2();				
-		
-			$('body').on('click', '.list-group .list-group-item', function () {
-                $(this).toggleClass('active');
-            });
-            $('.dual-list .selector').click(function () {
-                var $checkBox = $(this);
-                if (!$checkBox.hasClass('selected')) {
-                    $checkBox.addClass('selected').closest('.well').find('ul li:not(.active)').addClass('active');
-                    $checkBox.children('i').removeClass('glyphicon-unchecked').addClass('glyphicon-check');
-                } else {
-                    $checkBox.removeClass('selected').closest('.well').find('ul li.active').removeClass('active');
-                    $checkBox.children('i').removeClass('glyphicon-check').addClass('glyphicon-unchecked');
-                }
-            });
-            $('[name="SearchDualList"]').keyup(function (e) {
-                var code = e.keyCode || e.which;
-                if (code == '9') return;
-                if (code == '27') $(this).val(null);
-                var $rows = $(this).closest('.dual-list').find('.list-group li');
-                var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
-                $rows.show().filter(function () {
-                    var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
-                    return !~text.indexOf(val);
-                }).hide();
-            });	
+            $(".select2").select2();	
+			
+			
 		});
-
+		
     </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -88,7 +56,7 @@
                 </div>
                 <ul class="sidebar-menu">
                     <li class="header">CRPO SERRA</li>
-                    <li class="treeview">
+					<li class="treeview">
                         <a href="#">
                             <i class="fa fa-share"></i><span>Substituição Temporária</span>
                             <i class="fa fa-angle-left pull-right"></i>
@@ -118,7 +86,7 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li class="active">
+                            <li>
                                 <a href="#"><i class="fa fa-circle-o"></i> Cadastros <i class="fa fa-angle-left pull-right"></i></a>
                                 <ul class="treeview-menu">
                                     <li><a href="../../pages/03companhias/companhias.html"><i class="fa fa-circle-o"></i>Companhias </a></li>
@@ -137,7 +105,7 @@
                                 </ul>
                             </li>
                             <li></li>
-							<li>
+							<li class="active">
 								<a href="#"><i class="fa fa-circle-o"></i> Importações <i class="fa fa-angle-left pull-right"></i></a>
                                 <ul class="treeview-menu">
 									<li><a href="../../pages/verificacaoBoletim/verificacao.html"><i class="fa fa-circle-o"></i>Importar Boletim</a></li>
@@ -168,7 +136,7 @@
             <section class="content">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Cadastro de Contigente</h3>
+                        <h3 class="box-title">Importação de Boletim Instrução</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
@@ -176,42 +144,39 @@
                         <div class="box-body">
                             <div class="bs-example">
                                 <div class="col-md-12">
-                                    <div class="form-group col-md-6">
-                                        <label>Funções</label>
-                                        <select class="form-control select2" style="width: 100%;">
-                                            <option selected="Selecione">Selecione</option>
-                                            <option>Analista do P1</option>
-											<option>Analista do P2</option>
-                                            <option>Chefe do CRPO serra</option>
-                                            <option>Chefe do P1</option>
-                                            <option>Chefe do P4</option>
-                                            <option>Chefe do P3</option>
-                                        </select>
-                                    </div>
+									<div class="form-group col-md-6">
+										<label class="control-label">Arquivo</label>
+										<div class="file-input file-input-new">
+											<div class="input-group ">
+												<div tabindex="500" class="form-control file-caption  kv-fileinput-caption">
+													<div class="file-caption-name"></div>
+												</div>
+												<div class="input-group-btn">
+													<div tabindex="500" class="btn btn-primary btn-file">
+														<i class="glyphicon glyphicon-folder-open"></i>
+														&nbsp; 
+														<span class="hidden-xs">Escolher …</span>
+														<input id="input-1" type="file" class="file">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
                                 </div>
-								<div class="form-group col-md-12">
-									<div class="form-group col-md-7">
-										<label for="sigla">Descrição da Função</label>
-										<textarea type="text"  rows="10"  class="form-control" id="sigla" placeholder="Sigla" required> </textarea> 
-									</div>									
-								</div>
 								<div class="col-md-12">
-                                    <div class="form-group col-md-2">
-                                        <label>Vagas</label>
-                                        <input type="number" placeholder="Vagas" class="form-control" />
-                                    </div>
-									<div class="form-group col-md-2">
-                                        <label>Vagas Ocupadas</label>
-                                        <input class="form-control" placeholder="Ocupadas" type="number"  />
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label>Vagas Remanescentes</label>
-                                        <input class="form-control" placeholder="Remanescentes" type="number"  />
-                                    </div>
-                                </div>
+									<div class="form-group col-md-6">
+										<label>Selecionar Boletim</label>
+										<select class="form-control select2" style="width: 100%;">
+											<option selected="Selecione">Selecione</option>
+											<option>Boletim geral</option>
+											<option>Boletim CRPO</option>
+										</select>
+									</div>
+								</div>
+                            </div>
+                        </div>
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-success" onclick="window.location = '../../pages/escalaServico/listaEscala.html'">Salvar</button>
-                            <button type="close" class="btn btn-danger" onclick="window.location = '../../pages/escalaServico/listaEscala.html'">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Importar</button>
                         </div>
                     </form>
                 </div>

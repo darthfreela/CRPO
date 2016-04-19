@@ -5,58 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CRPO SERRA</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta http-equiv="Content-Language" content="pt-br">
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker-bs3.css">
-    <link rel="stylesheet" href="../../plugins/iCheck/all.css">
+    <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">
     <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
     <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
     <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <script src="../../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../../plugins/select2/select2.full.min.js"></script>
-    <script src="../../plugins/input-mask/jquery.inputmask.js"></script>
-    <script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-    <script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-    <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
     <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
-    <script src="../../plugins/iCheck/icheck.min.js"></script>
     <script src="../../plugins/fastclick/fastclick.min.js"></script>
     <script src="../../dist/js/app.min.js"></script>
     <script src="../../dist/js/demo.js"></script>
     <script>
         $(function () {
-            $(".select2").select2();				
-		
-			$('body').on('click', '.list-group .list-group-item', function () {
-                $(this).toggleClass('active');
-            });
-            $('.dual-list .selector').click(function () {
-                var $checkBox = $(this);
-                if (!$checkBox.hasClass('selected')) {
-                    $checkBox.addClass('selected').closest('.well').find('ul li:not(.active)').addClass('active');
-                    $checkBox.children('i').removeClass('glyphicon-unchecked').addClass('glyphicon-check');
-                } else {
-                    $checkBox.removeClass('selected').closest('.well').find('ul li.active').removeClass('active');
-                    $checkBox.children('i').removeClass('glyphicon-check').addClass('glyphicon-unchecked');
+            $("#motivos").DataTable({
+                "language": {
+                    "lengthMenu": "Mostrar _MENU_ entradas",
+                    "zeroRecords": "Nenhum registro encontrado",
+                    "info": "Mostrando _PAGE_ de _PAGES_ páginas",
+                    "infoEmpty": "Nenhum registro encontrado",
+                    "infoFiltered": "(filtrado apartir de  _MAX_ registros no total)",
+                    "search": "Pesquisar: "
+                },
+                "oLanguage": {
+                    "oPaginate": {
+                      "sPrevious": "Anterior",
+                      "sNext": "Próximo"
                 }
+              }
             });
-            $('[name="SearchDualList"]').keyup(function (e) {
-                var code = e.keyCode || e.which;
-                if (code == '9') return;
-                if (code == '27') $(this).val(null);
-                var $rows = $(this).closest('.dual-list').find('.list-group li');
-                var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
-                $rows.show().filter(function () {
-                    var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
-                    return !~text.indexOf(val);
-                }).hide();
-            });	
-		});
-
+        });
     </script>
+    <style type="text/css">
+        .btn-warning, .btn-danger {
+            height: 4px;
+        }
+
+            .btn-warning > .fa, .btn-warning > .glyphicon, .btn-warning > .ion,
+            .btn-danger > .fa, .btn-danger > .glyphicon, .btn-danger > .ion {
+                font-size: 15px;
+                display: inline-block;
+            }
+
+        .btn-warning, .btn-danger {
+            padding: 2px 5px 22px 5px;
+            margin: 0 0 0 10px;
+        }
+
+        .btn-block {
+            width: 6%;
+        }
+    </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -88,7 +91,7 @@
                 </div>
                 <ul class="sidebar-menu">
                     <li class="header">CRPO SERRA</li>
-                    <li class="treeview">
+					<li class="treeview">
                         <a href="#">
                             <i class="fa fa-share"></i><span>Substituição Temporária</span>
                             <i class="fa fa-angle-left pull-right"></i>
@@ -131,13 +134,14 @@
                                     <li><a href="../../pages/01quartelGeneral/quartel.html"><i class="fa fa-circle-o"></i>Quartel General </a></li>
                                     <li><a href="../../pages/cadastroSiglas/linhaServico.html"><i class="fa fa-circle-o"></i>Siglas</a></li>
                                     <li><a href="../../pages/cadastroTiposServico/tiposServico.html"><i class="fa fa-circle-o"></i>Tipo de Serviço </a></li>
+									<li><a href="../../pages/cadastroTextoInformativo/listaTextoInformativos.html"><i class="fa fa-circle-o"></i>Texto Inf Pt 3 </a></li>
                                     <li><a href="../../pages/02unidades/unidades.html"><i class="fa fa-circle-o"></i>Unidades </a></li>
                                     <li><a href="../../pages/uniformes/listaUniformes.html"><i class="fa fa-circle-o"></i>Uniformes</a></li>
 									<li><a href="../../usuario/linhaUsuario.html"><i class="fa fa-circle-o"></i>Usuário</a></li>
-                                </ul>
+								</ul>
                             </li>
                             <li></li>
-							<li>
+							<li class="active">
 								<a href="#"><i class="fa fa-circle-o"></i> Importações <i class="fa fa-angle-left pull-right"></i></a>
                                 <ul class="treeview-menu">
 									<li><a href="../../pages/verificacaoBoletim/verificacao.html"><i class="fa fa-circle-o"></i>Importar Boletim</a></li>
@@ -166,56 +170,108 @@
         <!-- CORPO -->
         <div class="content-wrapper">
             <section class="content">
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Cadastro de Contigente</h3>
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Textos Informativos</h3>
                     </div>
                     <!-- /.box-header -->
-                    <!-- form start -->
-                    <form role="form">
-                        <div class="box-body">
-                            <div class="bs-example">
-                                <div class="col-md-12">
-                                    <div class="form-group col-md-6">
-                                        <label>Funções</label>
-                                        <select class="form-control select2" style="width: 100%;">
-                                            <option selected="Selecione">Selecione</option>
-                                            <option>Analista do P1</option>
-											<option>Analista do P2</option>
-                                            <option>Chefe do CRPO serra</option>
-                                            <option>Chefe do P1</option>
-                                            <option>Chefe do P4</option>
-                                            <option>Chefe do P3</option>
-                                        </select>
-                                    </div>
-                                </div>
-								<div class="form-group col-md-12">
-									<div class="form-group col-md-7">
-										<label for="sigla">Descrição da Função</label>
-										<textarea type="text"  rows="10"  class="form-control" id="sigla" placeholder="Sigla" required> </textarea> 
-									</div>									
-								</div>
-								<div class="col-md-12">
-                                    <div class="form-group col-md-2">
-                                        <label>Vagas</label>
-                                        <input type="number" placeholder="Vagas" class="form-control" />
-                                    </div>
-									<div class="form-group col-md-2">
-                                        <label>Vagas Ocupadas</label>
-                                        <input class="form-control" placeholder="Ocupadas" type="number"  />
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label>Vagas Remanescentes</label>
-                                        <input class="form-control" placeholder="Remanescentes" type="number"  />
-                                    </div>
-                                </div>
-                        <div class="box-footer">
-                            <button type="submit" class="btn btn-success" onclick="window.location = '../../pages/escalaServico/listaEscala.html'">Salvar</button>
-                            <button type="close" class="btn btn-danger" onclick="window.location = '../../pages/escalaServico/listaEscala.html'">Cancelar</button>
+                    <div class="box-body">
+                        <div>
+                            <button class="btn btn-block btn-primary" onClick="window.location = '../../pages/cadastroTextoInformativo/textoInformativos.html'">Novo</button>
                         </div>
-                    </form>
+                        </br>                       
+                        <table id="motivos" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>ID Func.</th>
+									<th>Posto/Graduação Nome</th>
+                                    <th>Descrição</th>
+									<th>Data</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>524578</td>
+									<td>1º Sgt Soares</td>
+                                    <td>Aenean placerat. In vulputate urna eu arcu. Aliquam erat volutpat. Suspendisse potenti. Morbi mattis felis at nunc. Duis viverra diam non justo. In nisl. 
+									Nullam sit amet magna in magna gravida vehicula. Mauris tincidunt sem sed arcu. Nunc posuere. Nullam</td>
+									<td>01/02/2016</td>
+                                    <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>478742</td>
+									<td>MJ Santos</td>
+                                    <td>Aenean placerat. In vulputate urna eu arcu. Aliquam erat volutpat. Suspendisse potenti. Morbi mattis felis at nunc. 
+									Duis viverra diam non justo. In nisl. Nullam sit amet magna in magna gravida vehicula. Mauris tincidunt sem sed arcu. 
+									Nunc posuere. Nullam lectus justo, vulputate eget, mollis sed, tempor sed, magna. Cum sociis natoque penatibus et magnis dis parturient montes, 
+									nascetur ridiculus mus. Etiam neque.</td>
+									<td>01/02/2016</td>
+                                    <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>12457812</td>
+									<td>SD Nunes</td>
+                                    <td>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit 
+										quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut 
+										officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic 
+										tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. </td>
+									<td>01/02/2016</td>
+                                    <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>1278782</td>
+									<td>3º SGT Brito</td>
+                                    <td>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+										totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</td>
+									<td>01/02/2016</td>
+                                    <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>128782</td>
+									<td>2º SGT Romero</td>
+                                    <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. 
+										Aliquam erat volutpat. Nunc auctor. Mauris pretium quam et urna. Fusce nibh. Duis risus. Curabitur sagittis hendrerit ante.</td>
+									<td>01/02/20163</td>
+                                    <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>12124778</td>
+									<td>SD Tenorio</td>
+                                    <td> Proin pede metus, vulputate nec, fermentum fringilla, vehicula vitae, justo. Fusce consectetuer risus a nunc. Aliquam ornare wisi eu metus. 
+									Integer pellentesque quam vel velit. Duis pulvinar.</td>
+									<td>01/02/2016</td>
+                                    <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+									<th></th>
+                                    <th>ID Func.</th>
+									<th>Posto/Graduação Nome</th>
+                                    <th>Descrição</th>
+									<th>Data</th>
+                                    <th></th>
+                                    <th></th>
+								</tr>
+                            </tfoot>
+                        </table>
+                    </div>
                 </div>
-                <!-- /.box -->
             </section>
         </div>
         <!-- /CORPO -->

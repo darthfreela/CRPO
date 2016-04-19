@@ -5,16 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CRPO SERRA</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta http-equiv="Content-Language" content="pt-br">
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">
     <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
     <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <script src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
     <script src="../../plugins/fastclick/fastclick.min.js"></script>
     <script src="../../dist/js/app.min.js"></script>
     <script src="../../dist/js/demo.js"></script>
+    <script>
+        $(function () {
+            $("#motivos").DataTable({
+                "language": {
+                    "lengthMenu": "Mostrar _MENU_ entradas",
+                    "zeroRecords": "Nenhum registro encontrado",
+                    "info": "Mostrando _PAGE_ de _PAGES_ páginas",
+                    "infoEmpty": "Nenhum registro encontrado",
+                    "infoFiltered": "(filtrado apartir de  _MAX_ registros no total)",
+                    "search": "Pesquisar: "
+                },
+                "oLanguage": {
+                    "oPaginate": {
+                      "sPrevious": "Anterior",
+                      "sNext": "Próximo"
+                }
+              }
+            });
+        });
+    </script>
+    <style type="text/css">
+        .btn-warning, .btn-danger {
+            height: 4px;
+        }
+
+            .btn-warning > .fa, .btn-warning > .glyphicon, .btn-warning > .ion,
+            .btn-danger > .fa, .btn-danger > .glyphicon, .btn-danger > .ion {
+                font-size: 15px;
+                display: inline-block;
+            }
+
+        .btn-warning, .btn-danger {
+            padding: 2px 5px 22px 5px;
+            margin: 0 0 0 10px;
+        }
+
+        .btn-block {
+            width: 6%;
+        }
+    </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -88,7 +133,7 @@
                                     <li><a href="../../pages/cadastroPostoGraduacao/postoGraduacao.html"><i class="fa fa-circle-o"></i>Posto/Graduação </a></li>
                                     <li><a href="../../pages/01quartelGeneral/quartel.html"><i class="fa fa-circle-o"></i>Quartel General </a></li>
                                     <li><a href="../../pages/cadastroSiglas/linhaServico.html"><i class="fa fa-circle-o"></i>Siglas</a></li>
-                                    <li><a href="../../pages/cadastroTiposServico/tiposServico.html"><i class="fa fa-circle-o"></i>Tipo de Serviço </a></li>
+                                    <li><a href="../../pages/importarBoletimInstrucao/tiposServico.html"><i class="fa fa-circle-o"></i>Tipo de Serviço </a></li>
                                     <li><a href="../../pages/02unidades/unidades.html"><i class="fa fa-circle-o"></i>Unidades </a></li>
                                     <li><a href="../../pages/uniformes/listaUniformes.html"><i class="fa fa-circle-o"></i>Uniformes</a></li>
 									<li><a href="../../usuario/linhaUsuario.html"><i class="fa fa-circle-o"></i>Usuário</a></li>
@@ -124,96 +169,113 @@
         <!-- CORPO -->
         <div class="content-wrapper">
             <section class="content">
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Visualizar Boletim</h3>
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Visualização Boletim de Instrução</h3>
                     </div>
                     <!-- /.box-header -->
-                    <!-- form start -->
-                    <form role="form">
-						<div class="col-md-12">
+                    <div class="box-body">
+                       <div class="col-md-12">
 							<div class="form-group col-md-6">
-								<a href="visualizarboletim.html"><i class="fa fa-circle"></i>Boletim Gerais</a>
+								<a href="../../pages/verificacaoBoletim/visualizarboletim.html"><i class="fa fa-circle-o"></i>Boletim Gerais</a>
 							</div>
-							<div class="form-group col-md-6">
-								<a href="../../pages/importarBoletimInstrucao/listaBoletimInstucao.html"><i class="fa fa-circle-o"></i>Boletim de Instrução</a>
-							</div>
-						</div>
-                        <div class="box-body">                            
-                            <table id="motivos" class="table table-bordered table-striped">
+						   <div class="form-group col-md-6">
+							   <a href="listaBoletimInstrucao.html"><i class="fa fa-circle"></i>Boletim de Instrução</a>
+						   </div>
+					   </div>
+                        </br>                       
+                        <table id="motivos" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Data importação</th>
-                                    <th>Boletim CRPO</th>
-                                    <th>Boletim Importado</th>
-                                    <th>Excluir</th>
-                                    <th>Exportar</th>
+                                    <th></th>
+                                    <th>ID Func.</th>
+									<th>Posto/Graduação Nome</th>
+                                    <th>Descrição</th>
+									<th>Data</th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>11/04/2016</td>
-                                    <td><img src="Word.png"><a href="#"> Boletim Avaliação e Mérito de Oficiais</a></td>
-                                    <td><img src="Word.png"><a href="#"> Boletim POA 103</a></td>
+                                    <td>1</td>
+                                    <td>524578</td>
+									<td>1º Sgt Soares</td>
+                                    <td>Aenean placerat. In vulputate urna eu arcu. Aliquam erat volutpat. Suspendisse potenti. Morbi mattis felis at nunc. Duis viverra diam non justo. In nisl. 
+									Nullam sit amet magna in magna gravida vehicula. Mauris tincidunt sem sed arcu. Nunc posuere. Nullam</td>
+									<td>01/02/2016</td>
+                                    <td><a class="btn btn-warning" onClick="window.location = '../../pages/importarBoletimInstrucao/editarBoletins.html'"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
-                                    <td><a class="btn btn-success"><i class="fa fa-close "></i>Exportar</a></td>
                                 </tr>
                                 <tr>
-                                    <td>11/04/2016</td>
-                                    <td><img src="Word.png"><a href="#"> Boletim Avaliação e Mérito de Praças</a></td>
-                                    <td><img src="Word.png"><a href="#"> Boletim POA 104</a></td>
+                                    <td>2</td>
+                                    <td>478742</td>
+									<td>MJ Santos</td>
+                                    <td>Aenean placerat. In vulputate urna eu arcu. Aliquam erat volutpat. Suspendisse potenti. Morbi mattis felis at nunc. 
+									Duis viverra diam non justo. In nisl. Nullam sit amet magna in magna gravida vehicula. Mauris tincidunt sem sed arcu. 
+									Nunc posuere. Nullam lectus justo, vulputate eget, mollis sed, tempor sed, magna. Cum sociis natoque penatibus et magnis dis parturient montes, 
+									nascetur ridiculus mus. Etiam neque.</td>
+									<td>01/02/2016</td>
+                                    <td><a class="btn btn-warning" onClick="window.location = '../../pages/importarBoletimInstrucao/editarBoletins.html'"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
-                                    <td><a class="btn btn-success"><i class="fa fa-close "></i>Exportar</a></td>
-                                </tr>   
-                                <tr>
-                                    <td>11/04/2016</td>
-                                    <td><img src="Word.png"><a href="#"> Boletim de Movimentação de Oficiais</a></td>
-                                    <td><img src="Word.png"><a href="#"> Boletim POA 105</a></td>
-                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
-                                    <td><a class="btn btn-success"><i class="fa fa-close "></i>Exportar</a></td>
                                 </tr>
                                 <tr>
-                                    <td>11/04/2016</td>
-                                    <td><img src="Word.png"><a href="#"> Boletim de Movimentação de Praça</a></td>
-                                    <td><img src="Word.png"><a href="#"> Boletim POA 106</a></td>
+                                    <td>3</td>
+                                    <td>12457812</td>
+									<td>SD Nunes</td>
+                                    <td>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit 
+										quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut 
+										officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic 
+										tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. </td>
+									<td>01/02/2016</td>
+                                    <td><a class="btn btn-warning" onClick="window.location = '../../pages/importarBoletimInstrucao/editarBoletins.html'"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
-                                    <td><a class="btn btn-success"><i class="fa fa-close "></i>Exportar</a></td>
                                 </tr>
                                 <tr>
-                                    <td>11/04/2016</td>
-                                    <td><img src="Word.png"><a href="#"> Boletim de Movimentação Especial</a></td>
-                                    <td><img src="Word.png"><a href="#"> Boletim POA 107</a></td>
+                                    <td>4</td>
+                                    <td>1278782</td>
+									<td>3º SGT Brito</td>
+                                    <td>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+										totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</td>
+									<td>01/02/2016</td>
+                                    <td><a class="btn btn-warning" onClick="window.location = '../../pages/importarBoletimInstrucao/editarBoletins.html'"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
-                                    <td><a class="btn btn-success"><i class="fa fa-close "></i>Exportar</a></td>
                                 </tr>
                                 <tr>
-                                    <td>11/04/2016</td>
-                                    <td><img src="Word.png"><a href="#"> Boletim Geral</a></td>
-                                    <td><img src="Word.png"><a href="#"> Boletim POA 108</a></td>
+                                    <td>5</td>
+                                    <td>128782</td>
+									<td>2º SGT Romero</td>
+                                    <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. 
+										Aliquam erat volutpat. Nunc auctor. Mauris pretium quam et urna. Fusce nibh. Duis risus. Curabitur sagittis hendrerit ante.</td>
+									<td>01/02/20163</td>
+                                    <td><a class="btn btn-warning" onClick="window.location = '../../pages/importarBoletimInstrucao/editarBoletins.html'"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
-                                    <td><a class="btn btn-success"><i class="fa fa-close "></i>Exportar</a></td>
                                 </tr>
-                          </tbody>
+                                <tr>
+                                    <td>6</td>
+                                    <td>12124778</td>
+									<td>SD Tenorio</td>
+                                    <td> Proin pede metus, vulputate nec, fermentum fringilla, vehicula vitae, justo. Fusce consectetuer risus a nunc. Aliquam ornare wisi eu metus. 
+									Integer pellentesque quam vel velit. Duis pulvinar.</td>
+									<td>01/02/2016</td>
+                                    <td><a class="btn btn-warning" onClick="window.location = '../../pages/importarBoletimInstrucao/editarBoletins.html'"><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                </tr>
+                            </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Data importação</th>
-                                    <th>Boletim CRPO</th>
-                                    <th>Boletim Importado</th>
-                                    <th>Excluir</th>
-                                    <th>Exportar</th>
-                                </tr>
+									<th></th>
+                                    <th>ID Func.</th>
+									<th>Posto/Graduação Nome</th>
+                                    <th>Descrição</th>
+									<th>Data</th>
+                                    <th></th>
+                                    <th></th>
+								</tr>
                             </tfoot>
                         </table>
-</br></br>
-
-                            
-                        </div>
-                        <div class="box-footer">
-                            
-                        </div>
-                    </form>
+                    </div>
                 </div>
-                <!-- /.box -->
             </section>
         </div>
         <!-- /CORPO -->

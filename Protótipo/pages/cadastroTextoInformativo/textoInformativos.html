@@ -118,7 +118,7 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li class="active">
+                            <li>
                                 <a href="#"><i class="fa fa-circle-o"></i> Cadastros <i class="fa fa-angle-left pull-right"></i></a>
                                 <ul class="treeview-menu">
                                     <li><a href="../../pages/03companhias/companhias.html"><i class="fa fa-circle-o"></i>Companhias </a></li>
@@ -137,7 +137,7 @@
                                 </ul>
                             </li>
                             <li></li>
-							<li>
+							<li class="active">
 								<a href="#"><i class="fa fa-circle-o"></i> Importações <i class="fa fa-angle-left pull-right"></i></a>
                                 <ul class="treeview-menu">
 									<li><a href="../../pages/verificacaoBoletim/verificacao.html"><i class="fa fa-circle-o"></i>Importar Boletim</a></li>
@@ -168,7 +168,7 @@
             <section class="content">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Cadastro de Contigente</h3>
+                        <h3 class="box-title">Edição de Boletim de Instrução</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
@@ -176,37 +176,25 @@
                         <div class="box-body">
                             <div class="bs-example">
                                 <div class="col-md-12">
-                                    <div class="form-group col-md-6">
-                                        <label>Funções</label>
-                                        <select class="form-control select2" style="width: 100%;">
-                                            <option selected="Selecione">Selecione</option>
-                                            <option>Analista do P1</option>
-											<option>Analista do P2</option>
-                                            <option>Chefe do CRPO serra</option>
-                                            <option>Chefe do P1</option>
-                                            <option>Chefe do P4</option>
-                                            <option>Chefe do P3</option>
-                                        </select>
+                                    <div class="form-group col-md-2">
+                                        <label>Id Func.</label>
+                                        <input type="text" placeholder="ID func." class="form-control" value="524578" disabled/>
+                                    </div>
+									<div class="form-group col-md-6">
+                                        <label>Posto/Graduação Nome</label>
+                                        <input type="text" placeholder="Posto/Graduação Nome" class="form-control" value="1º Sgt Soares" disabled/>
                                     </div>
                                 </div>
 								<div class="form-group col-md-12">
-									<div class="form-group col-md-7">
-										<label for="sigla">Descrição da Função</label>
-										<textarea type="text"  rows="10"  class="form-control" id="sigla" placeholder="Sigla" required> </textarea> 
+									<div class="form-group col-md-6">
+										<label for="sigla">Descrição</label>
+										<textarea type="text"  rows="10"  class="form-control" id="sigla" placeholder="Descricao" required>Aenean placerat. In vulputate urna eu arcu. Aliquam erat volutpat. Suspendisse potenti.Morbi mattis felis at nunc. Duis viverra diam non justo. In nisl. Nullam sit amet magna in magna gravida vehicula. Mauris tincidunt sem sed arcu. Nunc posuere. Nullam</textarea> 
 									</div>									
 								</div>
 								<div class="col-md-12">
                                     <div class="form-group col-md-2">
-                                        <label>Vagas</label>
-                                        <input type="number" placeholder="Vagas" class="form-control" />
-                                    </div>
-									<div class="form-group col-md-2">
-                                        <label>Vagas Ocupadas</label>
-                                        <input class="form-control" placeholder="Ocupadas" type="number"  />
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label>Vagas Remanescentes</label>
-                                        <input class="form-control" placeholder="Remanescentes" type="number"  />
+                                        <label>Data</label>
+                                        <input type="data" placeholder="ID func." class="form-control" value="01/02/2016 a 05/02/2016" disabled/>
                                     </div>
                                 </div>
                         <div class="box-footer">
