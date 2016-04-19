@@ -87,7 +87,7 @@
                 <div class="user-panel">
                     <div class="pull-left image">
                         <img src="../../dist/img/logoCRPO160X160.png" class="img-circle" style="width: 70%; margin-left: 12%; height: 100px; max-width: 100%;">
-                    </div>                   
+                    </div>
                 </div>
                 <ul class="sidebar-menu">
                     <li class="header">CRPO SERRA</li>
@@ -96,14 +96,14 @@
                             <i class="fa fa-share"></i><span>Substituição Temporária</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-						<ul class="treeview-menu">
+                        <ul class="treeview-menu">
                             <li><a href="../../pages/substituicaoTemporaria/edit.html"><i class="fa fa-circle-o"></i>Novo</a></li>
                         </ul>
                         <ul class="treeview-menu">
-							<li><a href="../../pages/substituicaoTemporaria/list.html"><i class="fa fa-circle-o"></i>Procurar</a></li>
+                            <li><a href="../../pages/substituicaoTemporaria/list.html"><i class="fa fa-circle-o"></i>Procurar</a></li>
                         </ul>
-					</li>
-					<li class="treeview">
+                    </li>
+                    <li class="treeview">
                         <a href="#">
                             <i class="fa fa-share"></i><span>Aprovar Indisponibilidade</span>
                             <i class="fa fa-angle-left pull-right"></i>
@@ -111,11 +111,11 @@
                         <ul class="treeview-menu">
                             <li><a href="../../pages/workflowIndisponibilidadeAprovacao/aprovacaoPorSuperior.html"><i class="fa fa-circle-o"></i>Aprovação Superior</a></li>
                         </ul>
-						<ul class="treeview-menu">
-							<li><a href="../../pages/workflowIndisponibilidadeAprovacao/aprovacaoPorRh.html"><i class="fa fa-circle-o"></i>Aprovação RH</a></li>
+                        <ul class="treeview-menu">
+                            <li><a href="../../pages/workflowIndisponibilidadeAprovacao/aprovacaoPorRh.html"><i class="fa fa-circle-o"></i>Aprovação RH</a></li>
                         </ul>
                     </li>
-					<li class="active treeview">
+                    <li class="active treeview">
                         <a href="#">
                             <i class="fa fa-share"></i> <span>Ferramentas administrativas</span>
                             <i class="fa fa-angle-left pull-right"></i>
@@ -152,6 +152,7 @@
 									<li><a href="../../pages/verificacaoBoletim/visualizarboletim.html"><i class="fa fa-circle-o"></i>Visualizar Importações</a></li>
                                 </ul>
 							</li>
+							<li><a href="../../pages/gerarBoletimDiario/gerarBoletim.html"><i class="fa fa-circle-o"></i>Gerar / Visualizar Boletim Diario </a></li>
                             <li><a href="../../pages/relatorios/relatorios.html"><i class="fa fa-circle-o"></i>Relatórios Gerais</a></li>
                         </ul>
                     </li>
@@ -176,27 +177,102 @@
             <section class="content">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title" style="font-size: 32px;margin-left: 40%;margin-top: 20px;">Cadastro de Permissões</h3>
+                        <h3 class="box-title">Informativos</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <table id="motivos" class="table table-bordered table-striped" style="width: 800px;">
+                        <div>
+                            <button class="btn btn-block btn-primary" onClick="window.location = '../../pages/cadastroInformativo/informativos.html'">Novo</button>
+                        </div>
+                        </br>                       
+                        <table id="motivos" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th></th>
+									<th>Tipo</th>
+                                    <th>ID Func.</th>
+									<th>Posto/Graduação Nome</th>                                    
+									<th>Periodo</th>
+									<th>Dias</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <tr>
-                                	<td>Tipo do Perfil </td>
-                                	<td><select name="perfil">
-									  <option value="administrador">Administrador</option>
-									  <option value="usuarioprevilegiado">Usuário Previlegiado</option>
-									  <option value="usuariopadrao">Usuário Padrão</option>
-									</select></td>
+                                    <td>1</td>
+									<td>Diversas</td>
+                                    <td>12124778</td>
+									<td>3º SGT Brito</td>
+									<td>03/02/2016 a 06/02/2016</td>
+									<td>3</td>
+                                    <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
                                 <tr>
-                                	<td><button class="btn btn-block btn-primary" style="width: 80px;margin-top: 10px;">Cadastrar</button></td>
-                                	<td><button class="btn btn-block btn-primary" style="width: 80px;margin-top: 10px;">Limpar</button></td>
+                                    <td>2</td>
+									<td>Diversas</td>
+                                    <td>12124778</td>
+									<td>2º SGT Romero</td>
+									<td>01/02/2016 a 20/03/2016</td>
+									<td>50</td>
+                                    <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+									<td>Transferências</td>
+                                    <td>12124778</td>
+									<td>SD Nunes</td>
+									<td>01/02/2016 a 01/08/2016</td>
+									<td>180</td>
+                                    <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+									<td>Afastamento</td>
+                                    <td>12124778</td>
+									<td>MJ Santos</td>
+									<td>01/03/2016 a 04/03/2016</td>
+									<td>3</td>
+                                    <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+									<td>Substituições</td>
+                                    <td>12124778</td>
+									<td>1º Sgt Soares</td>
+									<td>01/04/2016 a 01/05/2016</td>
+									<td>30</td>
+                                    <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+									<td>Afastamento</td>
+                                    <td>12124778</td>
+									<td>SD Tenorio</td>
+									<td>01/02/2016 a 01/03/2016</td>
+									<td>30</td>
+                                    <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
                             </tbody>
+                            <tfoot>
+                                <tr>
+									<th></th>
+									<th>Tipo</th>
+                                    <th>ID Func.</th>
+									<th>Posto/Graduação Nome</th>                                    
+									<th>Periodo</th>
+									<th>Dias</th>
+                                    <th></th>
+                                    <th></th>
+								</tr>
+                            </tfoot>
                         </table>
-                        
                     </div>
                 </div>
             </section>

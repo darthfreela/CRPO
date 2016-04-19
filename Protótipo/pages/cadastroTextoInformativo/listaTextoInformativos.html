@@ -123,27 +123,31 @@
                         <ul class="treeview-menu">
                             <li class="active">
                                 <a href="#"><i class="fa fa-circle-o"></i> Cadastros <i class="fa fa-angle-left pull-right"></i></a>
-                                <ul class="treeview-menu">
+                               <ul class="treeview-menu">
                                     <li><a href="../../pages/03companhias/companhias.html"><i class="fa fa-circle-o"></i>Companhias </a></li>
                                     <li><a href="../../pages/contingente/listaContigente.html"><i class="fa fa-circle-o"></i>Contigente</a></li>
                                     <li><a href="../../pages/escalaServico/listaEscala.html"><i class="fa fa-circle-o"></i>Escala de Serviço</a></li>
+									<li><a href="../../pages/cadastroEstagiarios/listaEscala.html"><i class="fa fa-circle-o"></i>Estagiarios</a></li>
                                     <li><a href="../../pages/cadastroFuncoes/funcoes.html"><i class="fa fa-circle-o"></i>Funções </a></li>
-									<li><a href="../../perfil/linhaPerfil.html"><i class="fa fa-circle-o"></i>Perfil</a></li>
-									<li><a href="../../permissao/linhaPermissao.html"><i class="fa fa-circle-o"></i>Permissão</a></li>
+									<li><a href="../../pages/cadastroInformativo/listaInformativos.html"><i class="fa fa-circle-o"></i>Informativos Pt 3 </a></li>
+									<li><a href="../../pages/cadastroJusticaDisciplina/listaJusticaDisciplina.html"><i class="fa fa-circle-o"></i>Justiça e disciplina </a></li>
+									<li><a href="../../pages/cadastroLicenca/licenca.html"><i class="fa fa-circle-o"></i>Licença</a></li>
+                                    <li><a href="../../pages/01quartelGeneral/opm.html"><i class="fa fa-circle-o"></i>OPM </a></li>
+									<li><a href="../../pages/perfil/linhaPerfil.html"><i class="fa fa-circle-o"></i>Perfil</a></li>
+									<li><a href="../../pages/permissao/linhaPermissao.html"><i class="fa fa-circle-o"></i>Permissão</a></li>
                                     <li><a href="../../pages/cadastroPostoGraduacao/postoGraduacao.html"><i class="fa fa-circle-o"></i>Posto/Graduação </a></li>
-                                    <li><a href="../../pages/01quartelGeneral/quartel.html"><i class="fa fa-circle-o"></i>Quartel General </a></li>
                                     <li><a href="../../pages/cadastroSiglas/linhaServico.html"><i class="fa fa-circle-o"></i>Siglas</a></li>
                                     <li><a href="../../pages/cadastroTiposServico/tiposServico.html"><i class="fa fa-circle-o"></i>Tipo de Serviço </a></li>
 									<li><a href="../../pages/cadastroTextoInformativo/listaTextoInformativos.html"><i class="fa fa-circle-o"></i>Texto Inf Pt 3 </a></li>
-                                    <li><a href="../../pages/02unidades/unidades.html"><i class="fa fa-circle-o"></i>Unidades </a></li>
-                                    <li><a href="../../pages/uniformes/listaUniformes.html"><i class="fa fa-circle-o"></i>Uniformes</a></li>
-									<li><a href="../../usuario/linhaUsuario.html"><i class="fa fa-circle-o"></i>Usuário</a></li>
-								</ul>
+								<li><a href="../../pages/02unidades/unidades.html"><i class="fa fa-circle-o"></i>Unidades </a></li>
+								<li><a href="../../pages/uniformes/listaUniformes.html"><i class="fa fa-circle-o"></i>Uniformes</a></li>
+								   <li><a href="../../pages/usuario/linhaUsuario.html"><i class="fa fa-circle-o"></i>Usuário</a></li>
+							   </ul>
                             </li>
                             <li></li>
 							<li class="active">
 								<a href="#"><i class="fa fa-circle-o"></i> Importações <i class="fa fa-angle-left pull-right"></i></a>
-                                <ul class="treeview-menu">
+                                <ul class="treeview-menu"> 
 									<li><a href="../../pages/verificacaoBoletim/verificacao.html"><i class="fa fa-circle-o"></i>Importar Boletim</a></li>
 									<li><a href="../../pages/importarBoletimInstrucao/importaBoletimInstrucao.html"><i class="fa fa-circle-o"></i>Importar Boletim Instrução</a></li>                                   
 									<li><a href="../../pages/verificacaoBoletim/visualizarboletim.html"><i class="fa fa-circle-o"></i>Visualizar Importações</a></li>
@@ -160,7 +164,8 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="../../pages/apontamentoHoras/apontamento_horas.html"><i class="fa fa-circle-o"></i>Apontamento de Horas</a></li>
-                            <li><a href="../../pages/solicitarDispensa/solicitar_dispensa.html"><i class="fa fa-circle-o"></i>Solicitar dispensa</a></li>
+							<li><a href="../../pages/quadroDistribuicaoHoraExtra/list.html"><i class="fa fa-circle-o"></i>Horas Extras</a></li>
+                            <li><a href="../../pages/solicitarDispensa/solicitar_dispensa.html"><i class="fa fa-circle-o"></i>Solicitar dispensa</a></li>							
                         </ul>
                     </li>
                 </ul>
@@ -184,10 +189,8 @@
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th>ID Func.</th>
-									<th>Posto/Graduação Nome</th>
+                                    <th>Tipo</th>
                                     <th>Descrição</th>
-									<th>Data</th>
                                     <th></th>
                                     <th></th>
                                 </tr>
@@ -195,65 +198,53 @@
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>524578</td>
-									<td>1º Sgt Soares</td>
+									<td>Substituições</td>
                                     <td>Aenean placerat. In vulputate urna eu arcu. Aliquam erat volutpat. Suspendisse potenti. Morbi mattis felis at nunc. Duis viverra diam non justo. In nisl. 
 									Nullam sit amet magna in magna gravida vehicula. Mauris tincidunt sem sed arcu. Nunc posuere. Nullam</td>
-									<td>01/02/2016</td>
                                     <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>478742</td>
-									<td>MJ Santos</td>
+									<td>Transferências</td>
                                     <td>Aenean placerat. In vulputate urna eu arcu. Aliquam erat volutpat. Suspendisse potenti. Morbi mattis felis at nunc. 
 									Duis viverra diam non justo. In nisl. Nullam sit amet magna in magna gravida vehicula. Mauris tincidunt sem sed arcu. 
 									Nunc posuere. Nullam lectus justo, vulputate eget, mollis sed, tempor sed, magna. Cum sociis natoque penatibus et magnis dis parturient montes, 
 									nascetur ridiculus mus. Etiam neque.</td>
-									<td>01/02/2016</td>
                                     <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
-                                    <td>12457812</td>
-									<td>SD Nunes</td>
+									<td>Movimentação sanitária</td>
                                     <td>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit 
 										quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut 
 										officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic 
 										tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. </td>
-									<td>01/02/2016</td>
                                     <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
-                                    <td>1278782</td>
-									<td>3º SGT Brito</td>
+									<td>Entrega de Uniformes</td>
                                     <td>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
 										totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</td>
-									<td>01/02/2016</td>
                                     <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
-                                    <td>128782</td>
-									<td>2º SGT Romero</td>
+									<td>Diversas</td>
                                     <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. 
 										Aliquam erat volutpat. Nunc auctor. Mauris pretium quam et urna. Fusce nibh. Duis risus. Curabitur sagittis hendrerit ante.</td>
-									<td>01/02/20163</td>
                                     <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
                                 <tr>
                                     <td>6</td>
-                                    <td>12124778</td>
-									<td>SD Tenorio</td>
+									<td>Afastamento</td>
                                     <td> Proin pede metus, vulputate nec, fermentum fringilla, vehicula vitae, justo. Fusce consectetuer risus a nunc. Aliquam ornare wisi eu metus. 
 									Integer pellentesque quam vel velit. Duis pulvinar.</td>
-									<td>01/02/2016</td>
                                     <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
                                     <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
@@ -261,10 +252,8 @@
                             <tfoot>
                                 <tr>
 									<th></th>
-                                    <th>ID Func.</th>
-									<th>Posto/Graduação Nome</th>
+                                    <th>Tipo</th>
                                     <th>Descrição</th>
-									<th>Data</th>
                                     <th></th>
                                     <th></th>
 								</tr>

@@ -87,7 +87,7 @@
                 <div class="user-panel">
                     <div class="pull-left image">
                         <img src="../../dist/img/logoCRPO160X160.png" class="img-circle" style="width: 70%; margin-left: 12%; height: 100px; max-width: 100%;">
-                    </div>                   
+                    </div>
                 </div>
                 <ul class="sidebar-menu">
                     <li class="header">CRPO SERRA</li>
@@ -96,14 +96,14 @@
                             <i class="fa fa-share"></i><span>Substituição Temporária</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-						<ul class="treeview-menu">
+                        <ul class="treeview-menu">
                             <li><a href="../../pages/substituicaoTemporaria/edit.html"><i class="fa fa-circle-o"></i>Novo</a></li>
                         </ul>
                         <ul class="treeview-menu">
-							<li><a href="../../pages/substituicaoTemporaria/list.html"><i class="fa fa-circle-o"></i>Procurar</a></li>
+                            <li><a href="../../pages/substituicaoTemporaria/list.html"><i class="fa fa-circle-o"></i>Procurar</a></li>
                         </ul>
-					</li>
-					<li class="treeview">
+                    </li>
+                    <li class="treeview">
                         <a href="#">
                             <i class="fa fa-share"></i><span>Aprovar Indisponibilidade</span>
                             <i class="fa fa-angle-left pull-right"></i>
@@ -111,11 +111,11 @@
                         <ul class="treeview-menu">
                             <li><a href="../../pages/workflowIndisponibilidadeAprovacao/aprovacaoPorSuperior.html"><i class="fa fa-circle-o"></i>Aprovação Superior</a></li>
                         </ul>
-						<ul class="treeview-menu">
-							<li><a href="../../pages/workflowIndisponibilidadeAprovacao/aprovacaoPorRh.html"><i class="fa fa-circle-o"></i>Aprovação RH</a></li>
+                        <ul class="treeview-menu">
+                            <li><a href="../../pages/workflowIndisponibilidadeAprovacao/aprovacaoPorRh.html"><i class="fa fa-circle-o"></i>Aprovação RH</a></li>
                         </ul>
                     </li>
-					<li class="active treeview">
+                    <li class="active treeview">
                         <a href="#">
                             <i class="fa fa-share"></i> <span>Ferramentas administrativas</span>
                             <i class="fa fa-angle-left pull-right"></i>
@@ -144,9 +144,10 @@
 									<li><a href="../../pages/usuario/linhaUsuario.html"><i class="fa fa-circle-o"></i>Usuário</a></li>
 								</ul>
                             </li>
-                            <li>
+                            <li></li>
+							<li >
 								<a href="#"><i class="fa fa-circle-o"></i> Importações <i class="fa fa-angle-left pull-right"></i></a>
-                                <ul class="treeview-menu">
+                                <ul class="treeview-menu"> 
 									<li><a href="../../pages/verificacaoBoletim/verificacao.html"><i class="fa fa-circle-o"></i>Importar Boletim</a></li>
 									<li><a href="../../pages/importarBoletimInstrucao/importaBoletimInstrucao.html"><i class="fa fa-circle-o"></i>Importar Boletim Instrução</a></li>                                   
 									<li><a href="../../pages/verificacaoBoletim/visualizarboletim.html"><i class="fa fa-circle-o"></i>Visualizar Importações</a></li>
@@ -176,27 +177,88 @@
             <section class="content">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title" style="font-size: 32px;margin-left: 40%;margin-top: 20px;">Cadastro de Permissões</h3>
+                        <h3 class="box-title">Justiça e Disciplina</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <table id="motivos" class="table table-bordered table-striped" style="width: 800px;">
+                        <div>
+                            <button class="btn btn-block btn-primary" onClick="window.location = '../../pages/cadastroJusticaDisciplina/justicaDisciplina.html'">Novo</button>
+                        </div>
+                        </br>                       
+                        <table id="motivos" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th></th>
+									<th>Data</th>
+                                    <th>Descrição</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <tr>
-                                	<td>Tipo do Perfil </td>
-                                	<td><select name="perfil">
-									  <option value="administrador">Administrador</option>
-									  <option value="usuarioprevilegiado">Usuário Previlegiado</option>
-									  <option value="usuariopadrao">Usuário Padrão</option>
-									</select></td>
+                                    <td>1</td>
+									<td>01/02/2016</td>
+                                    <td>Aenean placerat. In vulputate urna eu arcu. Aliquam erat volutpat. Suspendisse potenti. Morbi mattis felis at nunc. Duis viverra diam non justo. In nisl. 
+									Nullam sit amet magna in magna gravida vehicula. Mauris tincidunt sem sed arcu. Nunc posuere. Nullam</td>
+									<td><a class="btn btn-warning" ><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
                                 <tr>
-                                	<td><button class="btn btn-block btn-primary" style="width: 80px;margin-top: 10px;">Cadastrar</button></td>
-                                	<td><button class="btn btn-block btn-primary" style="width: 80px;margin-top: 10px;">Limpar</button></td>
+                                    <td>2</td>
+									<td>01/02/2016</td>
+                                    <td>Aenean placerat. In vulputate urna eu arcu. Aliquam erat volutpat. Suspendisse potenti. Morbi mattis felis at nunc. 
+									Duis viverra diam non justo. In nisl. Nullam sit amet magna in magna gravida vehicula. Mauris tincidunt sem sed arcu. 
+									Nunc posuere. Nullam lectus justo, vulputate eget, mollis sed, tempor sed, magna. Cum sociis natoque penatibus et magnis dis parturient montes, 
+									nascetur ridiculus mus. Etiam neque.</td>
+                                    <td><a class="btn btn-warning" ><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+									<td>01/02/2016</td>
+                                    <td>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit 
+										quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut 
+										officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic 
+										tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. </td>
+                                    <td><a class="btn btn-warning" ><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+									<td>01/02/2016</td>
+                                    <td>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+										totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</td>
+                                    <td><a class="btn btn-warning" ><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+									<td>01/02/20163</td>
+                                    <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. 
+										Aliquam erat volutpat. Nunc auctor. Mauris pretium quam et urna. Fusce nibh. Duis risus. Curabitur sagittis hendrerit ante.</td>
+                                    <td><a class="btn btn-warning" ><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+									<td>01/02/2016</td>
+                                    <td> Proin pede metus, vulputate nec, fermentum fringilla, vehicula vitae, justo. Fusce consectetuer risus a nunc. Aliquam ornare wisi eu metus. 
+									Integer pellentesque quam vel velit. Duis pulvinar.</td>
+                                    <td><a class="btn btn-warning" ><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
                             </tbody>
+                            <tfoot>
+                                <tr>
+									<th></th>
+									<th>Data</th>
+                                    <th>Descrição</th>
+                                    <th></th>
+                                    <th></th>
+								</tr>
+                            </tfoot>
                         </table>
-                        
                     </div>
                 </div>
             </section>

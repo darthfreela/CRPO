@@ -28,34 +28,8 @@
     <script src="../../dist/js/demo.js"></script>
     <script>
         $(function () {
-            $(".select2").select2();				
-		
-			$('body').on('click', '.list-group .list-group-item', function () {
-                $(this).toggleClass('active');
-            });
-            $('.dual-list .selector').click(function () {
-                var $checkBox = $(this);
-                if (!$checkBox.hasClass('selected')) {
-                    $checkBox.addClass('selected').closest('.well').find('ul li:not(.active)').addClass('active');
-                    $checkBox.children('i').removeClass('glyphicon-unchecked').addClass('glyphicon-check');
-                } else {
-                    $checkBox.removeClass('selected').closest('.well').find('ul li.active').removeClass('active');
-                    $checkBox.children('i').removeClass('glyphicon-check').addClass('glyphicon-unchecked');
-                }
-            });
-            $('[name="SearchDualList"]').keyup(function (e) {
-                var code = e.keyCode || e.which;
-                if (code == '9') return;
-                if (code == '27') $(this).val(null);
-                var $rows = $(this).closest('.dual-list').find('.list-group li');
-                var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
-                $rows.show().filter(function () {
-                    var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
-                    return !~text.indexOf(val);
-                }).hide();
-            });	
-		});
-
+            $(".select2").select2();
+		}
     </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -124,22 +98,27 @@
                                     <li><a href="../../pages/03companhias/companhias.html"><i class="fa fa-circle-o"></i>Companhias </a></li>
                                     <li><a href="../../pages/contingente/listaContigente.html"><i class="fa fa-circle-o"></i>Contigente</a></li>
                                     <li><a href="../../pages/escalaServico/listaEscala.html"><i class="fa fa-circle-o"></i>Escala de Serviço</a></li>
+									<li><a href="../../pages/cadastroEstagiarios/listaEscala.html"><i class="fa fa-circle-o"></i>Estagiarios</a></li>
                                     <li><a href="../../pages/cadastroFuncoes/funcoes.html"><i class="fa fa-circle-o"></i>Funções </a></li>
-									<li><a href="../../perfil/linhaPerfil.html"><i class="fa fa-circle-o"></i>Perfil</a></li>
-									<li><a href="../../permissao/linhaPermissao.html"><i class="fa fa-circle-o"></i>Permissão</a></li>
+									<li><a href="../../pages/cadastroInformativo/listaInformativos.html"><i class="fa fa-circle-o"></i>Informativos Pt 3 </a></li>
+									<li><a href="../../pages/cadastroJusticaDisciplina/listaJusticaDisciplina.html"><i class="fa fa-circle-o"></i>Justiça e disciplina </a></li>
+									<li><a href="../../pages/cadastroLicenca/licenca.html"><i class="fa fa-circle-o"></i>Licença</a></li>
+                                    <li><a href="../../pages/01quartelGeneral/opm.html"><i class="fa fa-circle-o"></i>OPM </a></li>
+									<li><a href="../../pages/perfil/linhaPerfil.html"><i class="fa fa-circle-o"></i>Perfil</a></li>
+									<li><a href="../../pages/permissao/linhaPermissao.html"><i class="fa fa-circle-o"></i>Permissão</a></li>
                                     <li><a href="../../pages/cadastroPostoGraduacao/postoGraduacao.html"><i class="fa fa-circle-o"></i>Posto/Graduação </a></li>
-                                    <li><a href="../../pages/01quartelGeneral/quartel.html"><i class="fa fa-circle-o"></i>Quartel General </a></li>
                                     <li><a href="../../pages/cadastroSiglas/linhaServico.html"><i class="fa fa-circle-o"></i>Siglas</a></li>
                                     <li><a href="../../pages/cadastroTiposServico/tiposServico.html"><i class="fa fa-circle-o"></i>Tipo de Serviço </a></li>
-                                    <li><a href="../../pages/02unidades/unidades.html"><i class="fa fa-circle-o"></i>Unidades </a></li>
-                                    <li><a href="../../pages/uniformes/listaUniformes.html"><i class="fa fa-circle-o"></i>Uniformes</a></li>
-									<li><a href="../../usuario/linhaUsuario.html"><i class="fa fa-circle-o"></i>Usuário</a></li>
-                                </ul>
+									<li><a href="../../pages/cadastroTextoInformativo/listaTextoInformativos.html"><i class="fa fa-circle-o"></i>Texto Inf Pt 3 </a></li>
+								<li><a href="../../pages/02unidades/unidades.html"><i class="fa fa-circle-o"></i>Unidades </a></li>
+								<li><a href="../../pages/uniformes/listaUniformes.html"><i class="fa fa-circle-o"></i>Uniformes</a></li>
+									<li><a href="../../pages/usuario/linhaUsuario.html"><i class="fa fa-circle-o"></i>Usuário</a></li>
+								</ul>
                             </li>
                             <li></li>
 							<li class="active">
 								<a href="#"><i class="fa fa-circle-o"></i> Importações <i class="fa fa-angle-left pull-right"></i></a>
-                                <ul class="treeview-menu">
+                                <ul class="treeview-menu"> 
 									<li><a href="../../pages/verificacaoBoletim/verificacao.html"><i class="fa fa-circle-o"></i>Importar Boletim</a></li>
 									<li><a href="../../pages/importarBoletimInstrucao/importaBoletimInstrucao.html"><i class="fa fa-circle-o"></i>Importar Boletim Instrução</a></li>                                   
 									<li><a href="../../pages/verificacaoBoletim/visualizarboletim.html"><i class="fa fa-circle-o"></i>Visualizar Importações</a></li>
@@ -156,7 +135,8 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="../../pages/apontamentoHoras/apontamento_horas.html"><i class="fa fa-circle-o"></i>Apontamento de Horas</a></li>
-                            <li><a href="../../pages/solicitarDispensa/solicitar_dispensa.html"><i class="fa fa-circle-o"></i>Solicitar dispensa</a></li>
+							<li><a href="../../pages/quadroDistribuicaoHoraExtra/list.html"><i class="fa fa-circle-o"></i>Horas Extras</a></li>
+                            <li><a href="../../pages/solicitarDispensa/solicitar_dispensa.html"><i class="fa fa-circle-o"></i>Solicitar dispensa</a></li>							
                         </ul>
                     </li>
                 </ul>
@@ -177,24 +157,23 @@
                             <div class="bs-example">
                                 <div class="col-md-12">
                                     <div class="form-group col-md-2">
-                                        <label>Id Func.</label>
-                                        <input type="text" placeholder="ID func." class="form-control" value="524578" disabled/>
+                                        <label>Tipo</label>
+                                        <select class="form-control select2" style="width: 100%;">
+                                            <option selected="Selecione">Selecione</option>
+                                            <option>Afastamento</option>
+											<option>Licenças(todas)</option>
+                                            <option>Substituições</option>
+                                            <option>Transferências</option>
+                                            <option>Movimentação sanitária</option>
+                                            <option>Entrega de Uniformes</option>
+											<option>Ação e contenção</option>
+											<option>Operações que participou</option>
+											<option>Diversas</option>
+                                        </select>
                                     </div>
 									<div class="form-group col-md-6">
-                                        <label>Posto/Graduação Nome</label>
+                                        <label>Descrição</label>										
                                         <input type="text" placeholder="Posto/Graduação Nome" class="form-control" value="1º Sgt Soares" disabled/>
-                                    </div>
-                                </div>
-								<div class="form-group col-md-12">
-									<div class="form-group col-md-6">
-										<label for="sigla">Descrição</label>
-										<textarea type="text"  rows="10"  class="form-control" id="sigla" placeholder="Descricao" required>Aenean placerat. In vulputate urna eu arcu. Aliquam erat volutpat. Suspendisse potenti.Morbi mattis felis at nunc. Duis viverra diam non justo. In nisl. Nullam sit amet magna in magna gravida vehicula. Mauris tincidunt sem sed arcu. Nunc posuere. Nullam</textarea> 
-									</div>									
-								</div>
-								<div class="col-md-12">
-                                    <div class="form-group col-md-2">
-                                        <label>Data</label>
-                                        <input type="data" placeholder="ID func." class="form-control" value="01/02/2016 a 05/02/2016" disabled/>
                                     </div>
                                 </div>
                         <div class="box-footer">

@@ -5,61 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CRPO SERRA</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <meta http-equiv="Content-Language" content="pt-br">
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">
     <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
     <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <script src="../../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
-    <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
     <script src="../../plugins/fastclick/fastclick.min.js"></script>
     <script src="../../dist/js/app.min.js"></script>
     <script src="../../dist/js/demo.js"></script>
-    <script>
-        $(function () {
-            $("#motivos").DataTable({
-                "language": {
-                    "lengthMenu": "Mostrar _MENU_ entradas",
-                    "zeroRecords": "Nenhum registro encontrado",
-                    "info": "Mostrando _PAGE_ de _PAGES_ páginas",
-                    "infoEmpty": "Nenhum registro encontrado",
-                    "infoFiltered": "(filtrado apartir de  _MAX_ registros no total)",
-                    "search": "Pesquisar: "
-                },
-                "oLanguage": {
-                    "oPaginate": {
-                      "sPrevious": "Anterior",
-                      "sNext": "Próximo"
-                }
-              }
-            });
-        });
-    </script>
-    <style type="text/css">
-        .btn-warning, .btn-danger {
-            height: 4px;
-        }
-
-            .btn-warning > .fa, .btn-warning > .glyphicon, .btn-warning > .ion,
-            .btn-danger > .fa, .btn-danger > .glyphicon, .btn-danger > .ion {
-                font-size: 15px;
-                display: inline-block;
-            }
-
-        .btn-warning, .btn-danger {
-            padding: 2px 5px 22px 5px;
-            margin: 0 0 0 10px;
-        }
-
-        .btn-block {
-            width: 6%;
-        }
-    </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -87,7 +42,7 @@
                 <div class="user-panel">
                     <div class="pull-left image">
                         <img src="../../dist/img/logoCRPO160X160.png" class="img-circle" style="width: 70%; margin-left: 12%; height: 100px; max-width: 100%;">
-                    </div>                   
+                    </div>
                 </div>
                 <ul class="sidebar-menu">
                     <li class="header">CRPO SERRA</li>
@@ -96,14 +51,14 @@
                             <i class="fa fa-share"></i><span>Substituição Temporária</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-						<ul class="treeview-menu">
+                        <ul class="treeview-menu">
                             <li><a href="../../pages/substituicaoTemporaria/edit.html"><i class="fa fa-circle-o"></i>Novo</a></li>
                         </ul>
                         <ul class="treeview-menu">
-							<li><a href="../../pages/substituicaoTemporaria/list.html"><i class="fa fa-circle-o"></i>Procurar</a></li>
+                            <li><a href="../../pages/substituicaoTemporaria/list.html"><i class="fa fa-circle-o"></i>Procurar</a></li>
                         </ul>
-					</li>
-					<li class="treeview">
+                    </li>
+                    <li class="treeview">
                         <a href="#">
                             <i class="fa fa-share"></i><span>Aprovar Indisponibilidade</span>
                             <i class="fa fa-angle-left pull-right"></i>
@@ -111,17 +66,17 @@
                         <ul class="treeview-menu">
                             <li><a href="../../pages/workflowIndisponibilidadeAprovacao/aprovacaoPorSuperior.html"><i class="fa fa-circle-o"></i>Aprovação Superior</a></li>
                         </ul>
-						<ul class="treeview-menu">
-							<li><a href="../../pages/workflowIndisponibilidadeAprovacao/aprovacaoPorRh.html"><i class="fa fa-circle-o"></i>Aprovação RH</a></li>
+                        <ul class="treeview-menu">
+                            <li><a href="../../pages/workflowIndisponibilidadeAprovacao/aprovacaoPorRh.html"><i class="fa fa-circle-o"></i>Aprovação RH</a></li>
                         </ul>
                     </li>
-					<li class="active treeview">
+                    <li class="active treeview">
                         <a href="#">
                             <i class="fa fa-share"></i> <span>Ferramentas administrativas</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li class="active">
+                            <li>
                                 <a href="#"><i class="fa fa-circle-o"></i> Cadastros <i class="fa fa-angle-left pull-right"></i></a>
                                 <ul class="treeview-menu">
                                     <li><a href="../../pages/03companhias/companhias.html"><i class="fa fa-circle-o"></i>Companhias </a></li>
@@ -144,7 +99,8 @@
 									<li><a href="../../pages/usuario/linhaUsuario.html"><i class="fa fa-circle-o"></i>Usuário</a></li>
 								</ul>
                             </li>
-                            <li>
+                            <li></li>
+							<li class="active">
 								<a href="#"><i class="fa fa-circle-o"></i> Importações <i class="fa fa-angle-left pull-right"></i></a>
                                 <ul class="treeview-menu">
 									<li><a href="../../pages/verificacaoBoletim/verificacao.html"><i class="fa fa-circle-o"></i>Importar Boletim</a></li>
@@ -174,31 +130,83 @@
         <!-- CORPO -->
         <div class="content-wrapper">
             <section class="content">
-                <div class="box">
-                    <div class="box-header">
-                        <h3 class="box-title" style="font-size: 32px;margin-left: 40%;margin-top: 20px;">Cadastro de Permissões</h3>
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Visualizar Boletim</h3>
                     </div>
                     <!-- /.box-header -->
-                    <div class="box-body">
-                        <table id="motivos" class="table table-bordered table-striped" style="width: 800px;">
+                    <!-- form start -->
+                    <form role="form">
+						<div class="col-md-2">
+                            <button class="btn btn-block btn-primary">Gerar Boletim Diario</button>
+                        </div>
+                        <div class="box-body">                            
+                            <table id="motivos" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Data da Geração</th>                                    
+                                    <th></th>
+                                    <th></th>
+									<th></th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <tr>
-                                	<td>Tipo do Perfil </td>
-                                	<td><select name="perfil">
-									  <option value="administrador">Administrador</option>
-									  <option value="usuarioprevilegiado">Usuário Previlegiado</option>
-									  <option value="usuariopadrao">Usuário Padrão</option>
-									</select></td>
+                                    <td>11/04/2016</td>
+									<td><a class="btn btn-warning"><i class="fa fa-eye "></i>Visualizar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                    <td><a class="btn btn-success"><i class="fa fa-send-o "></i>Enviar</a></td>
                                 </tr>
                                 <tr>
-                                	<td><button class="btn btn-block btn-primary" style="width: 80px;margin-top: 10px;">Cadastrar</button></td>
-                                	<td><button class="btn btn-block btn-primary" style="width: 80px;margin-top: 10px;">Limpar</button></td>
+                                    <td>10/04/2016</td>
+									<td><a class="btn btn-warning"><i class="fa fa-eye "></i>Visualizar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                    <td><a class="btn btn-success"><i class="fa fa-send-o "></i>Enviar</a></td>
+                                </tr>   
+                                <tr>
+                                    <td>09/04/2016</td>
+									<td><a class="btn btn-warning"><i class="fa fa-eye "></i>Visualizar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                    <td><a class="btn btn-success"><i class="fa fa-send-o "></i>Enviar</a></td>
                                 </tr>
-                            </tbody>
+                                <tr>
+                                    <td>08/04/2016</td>
+									<td><a class="btn btn-warning"><i class="fa fa-eye "></i>Visualizar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                    <td><a class="btn btn-success"><i class="fa fa-send-o "></i>Enviar</a></td>
+                                </tr>
+                                <tr>
+                                    <td>07/04/2016</td>
+									<td><a class="btn btn-warning"><i class="fa fa-eye "></i>Visualizar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                    <td><a class="btn btn-success"><i class="fa fa-send-o "></i>Enviar</a></td>
+                                </tr>
+                                <tr>
+                                    <td>06/04/2016</td>
+									<td><a class="btn btn-warning"><i class="fa fa-eye "></i>Visualizar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                    <td><a class="btn btn-success"><i class="fa fa-send-o "></i>Enviar</a></td>
+                                </tr>
+                          </tbody>
+                            <tfoot>
+                                <tr>
+									<th>Data da Geração</th>                                    
+                                    <th></th>
+                                    <th></th>
+									<th></th>
+                                </tr>
+                            </tfoot>
                         </table>
-                        
-                    </div>
+</br></br>
+
+                            
+                        </div>
+                        <div class="box-footer">
+                            
+                        </div>
+                    </form>
                 </div>
+                <!-- /.box -->
             </section>
         </div>
         <!-- /CORPO -->

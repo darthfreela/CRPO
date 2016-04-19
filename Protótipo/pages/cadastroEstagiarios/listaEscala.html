@@ -87,7 +87,7 @@
                 <div class="user-panel">
                     <div class="pull-left image">
                         <img src="../../dist/img/logoCRPO160X160.png" class="img-circle" style="width: 70%; margin-left: 12%; height: 100px; max-width: 100%;">
-                    </div>                   
+                    </div>
                 </div>
                 <ul class="sidebar-menu">
                     <li class="header">CRPO SERRA</li>
@@ -100,9 +100,9 @@
                             <li><a href="../../pages/substituicaoTemporaria/edit.html"><i class="fa fa-circle-o"></i>Novo</a></li>
                         </ul>
                         <ul class="treeview-menu">
-							<li><a href="../../pages/substituicaoTemporaria/list.html"><i class="fa fa-circle-o"></i>Procurar</a></li>
+					<li><a href="../../pages/substituicaoTemporaria/list.html"><i class="fa fa-circle-o"></i>Procurar</a></li>
                         </ul>
-					</li>
+				   </li>
 					<li class="treeview">
                         <a href="#">
                             <i class="fa fa-share"></i><span>Aprovar Indisponibilidade</span>
@@ -137,21 +137,14 @@
 									<li><a href="../../pages/permissao/linhaPermissao.html"><i class="fa fa-circle-o"></i>Permissão</a></li>
                                     <li><a href="../../pages/cadastroPostoGraduacao/postoGraduacao.html"><i class="fa fa-circle-o"></i>Posto/Graduação </a></li>
                                     <li><a href="../../pages/cadastroSiglas/linhaServico.html"><i class="fa fa-circle-o"></i>Siglas</a></li>
-                                    <li><a href="../../pages/cadastroTiposServico/tiposServico.html"><i class="fa fa-circle-o"></i>Tipo de Serviço </a></li>
+								<li><a href="../../pages/cadastroTiposServico/tiposServico.html"><i class="fa fa-circle-o"></i>Tipo de Serviço </a></li>
 									<li><a href="../../pages/cadastroTextoInformativo/listaTextoInformativos.html"><i class="fa fa-circle-o"></i>Texto Inf Pt 3 </a></li>
-								<li><a href="../../pages/02unidades/unidades.html"><i class="fa fa-circle-o"></i>Unidades </a></li>
-								<li><a href="../../pages/uniformes/listaUniformes.html"><i class="fa fa-circle-o"></i>Uniformes</a></li>
+									<li><a href="../../pages/02unidades/unidades.html"><i class="fa fa-circle-o"></i>Unidades </a></li>
+                                    <li><a href="../../pages/uniformes/listaUniformes.html"><i class="fa fa-circle-o"></i>Uniformes</a></li>
 									<li><a href="../../pages/usuario/linhaUsuario.html"><i class="fa fa-circle-o"></i>Usuário</a></li>
 								</ul>
                             </li>
-                            <li>
-								<a href="#"><i class="fa fa-circle-o"></i> Importações <i class="fa fa-angle-left pull-right"></i></a>
-                                <ul class="treeview-menu">
-									<li><a href="../../pages/verificacaoBoletim/verificacao.html"><i class="fa fa-circle-o"></i>Importar Boletim</a></li>
-									<li><a href="../../pages/importarBoletimInstrucao/importaBoletimInstrucao.html"><i class="fa fa-circle-o"></i>Importar Boletim Instrução</a></li>                                   
-									<li><a href="../../pages/verificacaoBoletim/visualizarboletim.html"><i class="fa fa-circle-o"></i>Visualizar Importações</a></li>
-                                </ul>
-							</li>
+                            <li><a href="../../pages/verificacaoBoletim/verificacao.html"><i class="fa fa-circle-o"></i>Importar Boletim</a></li>
                             <li><a href="../../pages/relatorios/relatorios.html"><i class="fa fa-circle-o"></i>Relatórios Gerais</a></li>
                         </ul>
                     </li>
@@ -161,7 +154,7 @@
                             <i class="fa fa-share"></i><span>Ferramentas do Usuário</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                        <ul class="treeview-menu">
+						<ul class="treeview-menu">
                             <li><a href="../../pages/apontamentoHoras/apontamento_horas.html"><i class="fa fa-circle-o"></i>Apontamento de Horas</a></li>
 							<li><a href="../../pages/quadroDistribuicaoHoraExtra/list.html"><i class="fa fa-circle-o"></i>Horas Extras</a></li>
                             <li><a href="../../pages/solicitarDispensa/solicitar_dispensa.html"><i class="fa fa-circle-o"></i>Solicitar dispensa</a></li>							
@@ -176,27 +169,84 @@
             <section class="content">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title" style="font-size: 32px;margin-left: 40%;margin-top: 20px;">Cadastro de Permissões</h3>
+                        <h3 class="box-title">Estagiários</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <table id="motivos" class="table table-bordered table-striped" style="width: 800px;">
+                        <div>
+                            <a href="./cadastroEstagiarios.html"><button class="btn btn-block btn-primary">Novo</button></a>
+                        </div>
+                        </br>
+                       
+                        <table id="motivos" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Nome</th>
+                                    <th>Semestre</th>
+                                    <th>Vigência do Contrato</th>
+                                    <th>ag/CC</th>
+                                    <th>Dias Trabalhados</th>
+                                    <th>Qtd de Vales Transporte</th>
+                                    <th>Horas Trabalhadas</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <tr>
-                                	<td>Tipo do Perfil </td>
-                                	<td><select name="perfil">
-									  <option value="administrador">Administrador</option>
-									  <option value="usuarioprevilegiado">Usuário Previlegiado</option>
-									  <option value="usuariopadrao">Usuário Padrão</option>
-									</select></td>
+                                    <td>1</td>
+                                    <td>Carlos André Antunes</td>
+                                    <td>2º semestre</td>
+                                    <td>25/12/2016</td>
+                                    <td>1487-7/18898-0</td>
+                                    <td>15</td>
+                                    <td>15</td>
+                                    <td>120</td>
+                                    <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
                                 <tr>
-                                	<td><button class="btn btn-block btn-primary" style="width: 80px;margin-top: 10px;">Cadastrar</button></td>
-                                	<td><button class="btn btn-block btn-primary" style="width: 80px;margin-top: 10px;">Limpar</button></td>
+                                    <td>2</td>
+                                     <td>Carlos André Antunes</td>
+                                    <td>2º semestre</td>
+                                    <td>25/12/2016</td>
+                                    <td>1487-7/18898-0</td>
+                                    <td>15</td>
+                                    <td>15</td>
+                                    <td>120</td>
+                                    <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
                                 </tr>
+                                <tr>
+                                    <td>3</td>
+                                     <td>Carlos André Antunes</td>
+                                    <td>2º semestre</td>
+                                    <td>25/12/2016</td>
+                                    <td>1487-7/18898-0</td>
+                                    <td>15</td>
+                                    <td>15</td>
+                                    <td>120</td>
+                                    <td><a class="btn btn-warning"><i class="fa fa-edit"></i>Editar</a></td>
+                                    <td><a class="btn btn-danger"><i class="fa fa-close "></i>Excluir</a></td>
+                                </tr>
+                                
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                   <th></th>
+                                   <th>Nome</th>
+                                   <th>Semestre</th>
+                                   <th>Vigência do Contrato</th>
+                                   <th>ag/CC</th>
+                                   <th>Dias Trabalhados</th>
+                                   <th>Qtd de Vales Transporte</th>
+                                   <th>Horas Trabalhadas</th>
+                                   <th></th>
+                                   <th></th>
+                                </tr>
+                            </tfoot>
                         </table>
-                        
                     </div>
                 </div>
             </section>
