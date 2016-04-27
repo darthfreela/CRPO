@@ -1,0 +1,22 @@
+Precisa da entidade Boletim? (criada)
+
+CG 6 seria o campo id?
+
+opm, gpm, companhia todas devem ter endereco?
+
+posto graduacao precisa de cidade?
+posto graduacao nao tera conhecimento do proximo na cadeia? uma ligação de postoGraduacao com o proprio postoGraduacao?
+
+usuario, cg 19, cg 20, seria um boolean para ativo? usuario n tem id funcional?
+
+quadro efetivo, seria um relatório ou algo seria cadastrado por ele? Sera ligado a unidade ou a companhia? Nao entendi porra nenhuma
+
+informativo - textoInformativo, tpTextFunc:String e tipoTextInfo, o que seria,?
+
+Usuario: Sexo Boolean LOL, faz ou não faz? é isso? KK
+
+Licenca seria pedido de dispensa? Ou não usa o mesmo processo?
+
+PerfilAcesso, o que seria idSuperiorImediato?
+
+Estagiario nao tera login no sistema?
