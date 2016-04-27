@@ -3,13 +3,17 @@
 CG 6 seria o campo id?
 
 opm, gpm, companhia todas devem ter endereco?
+Carlos - Não é necessidade, tendo em vista que eles não vão usar o endereço pra nada. Mas se quiser, sim.
 
 posto graduacao precisa de cidade?
+Carlos - Não
 posto graduacao nao tera conhecimento do proximo na cadeia? uma ligação de postoGraduacao com o proprio postoGraduacao?
+Carlos - Não, na vida real existe uma cadeia hierarquica, mas o que importa é a função que o militar executa e não o posto e graduação. (Ex: Eu sou auxiliar de informática, eu me reporto para o chefe da seção de informática, que é um tenente, mas poderia ser um capitão, ou sargento, etc.. Eu me reporto ao militar que faz a função de chefe de informática, independente do posto/grad dele.)
 
 usuario, cg 19, cg 20, seria um boolean para ativo? usuario n tem id funcional?
 
 quadro efetivo, seria um relatório ou algo seria cadastrado por ele? Sera ligado a unidade ou a companhia? Nao entendi porra nenhuma
+Carlos - Só relatório, ligado a unidade, e lista tudo que tem na unidade (companhia, gpm, pelotão, funções)
 
 informativo - textoInformativo, tpTextFunc:String e tipoTextInfo, o que seria,?
 informativo -> tpTextFunc na verdade era pra ser idTextFunc para referenciar com a classe TextosInformativos.
@@ -20,7 +24,10 @@ textoInformativo -> é um campo String que vai ter o valor que seria um desses v
 Usuario: Sexo Boolean LOL, faz ou não faz? é isso? KK
 
 Licenca seria pedido de dispensa? Ou não usa o mesmo processo?
+Carlos - A licença é direito(independente do chefe do militar querer ou não, ele tem o direito de tirar a licença). A dispesa é conceção (não é direito, se o chefe não autorizar, o militar não tira dispensa)
 
 PerfilAcesso, o que seria idSuperiorImediato?
+Carlos - o id do perfil à quem o PerfilAcesso irá se reportar
 
 Estagiario nao tera login no sistema?
+Carlos - Não
