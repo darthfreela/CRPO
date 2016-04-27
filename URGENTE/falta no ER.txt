@@ -1,0 +1,19 @@
+falta:
+	Usuário
+		- nome_de_guerra
+		- imagem_usuario
+
+	OPM
+		-sigla
+	GPM
+		-sigla
+	COmpanhia
+		-sigla
+	Posto/Graduação
+		-sigla
+	Tipo/Serviço
+		-uniforme
+	Pelotão
+		-tudo
+	Justiça_Disciplina
+		-data_inclusao
