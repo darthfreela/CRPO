@@ -1,4 +1,4 @@
-Precisa da entidade Boletim? (criada)
+﻿Precisa da entidade Boletim? (criada)
 
 CG 6 seria o campo id?
 
@@ -12,6 +12,10 @@ usuario, cg 19, cg 20, seria um boolean para ativo? usuario n tem id funcional?
 quadro efetivo, seria um relatório ou algo seria cadastrado por ele? Sera ligado a unidade ou a companhia? Nao entendi porra nenhuma
 
 informativo - textoInformativo, tpTextFunc:String e tipoTextInfo, o que seria,?
+informativo -> tpTextFunc na verdade era pra ser idTextFunc para referenciar com a classe TextosInformativos.
+textoInformativo -> é um campo String que vai ter o valor que seria um desses valores "Afastamento, Licenças(todas), Substituições, Transferências, 
+									Movimentação sanitária, Entrega de Uniformes, Ação e contenção, 
+									Operações que participou, Diversas"
 
 Usuario: Sexo Boolean LOL, faz ou não faz? é isso? KK
 
