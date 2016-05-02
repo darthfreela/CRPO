@@ -27,7 +27,8 @@ Licenca seria pedido de dispensa? Ou não usa o mesmo processo?
 Carlos - A licença é direito(independente do chefe do militar querer ou não, ele tem o direito de tirar a licença). A dispesa é conceção (não é direito, se o chefe não autorizar, o militar não tira dispensa)
 
 PerfilAcesso, o que seria idSuperiorImediato?
-Carlos - o id do perfil à quem o PerfilAcesso irá se reportar
+Carlos - o id do perfil à quem o PerfilAcesso irá se reportar 
+Elimar - seria uma ligação com a classe Usuario ou uma ligação de Perfil com Perfil?
 
 Estagiario nao tera login no sistema?
 Carlos - Não
