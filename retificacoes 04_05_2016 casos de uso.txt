@@ -1,0 +1,6 @@
+cuidar o nome dos baloes para que sejam iguais do caso de uso
+falha conexao com banco, log pode fazer a citaçao no cabecario da parte casos de uso
+cada caso de uso e uma tabela
+ser mais detalhista no processo de acoes
+pos e pre condiçoes revizar todas
+efetuar alteraçoes e disponibilizar no modle pra proximo aula
