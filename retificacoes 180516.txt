@@ -1,0 +1,13 @@
+herança caso de uso
+tabelas nunca começar paragrafo
+autores
+caso de uso colocar mais de um exemplo de reuitio e explicar melhor
+diagrama de sequencia revisar referencia bibliografica, colocar no fim do capitulo e so chmar no texto
+linha trajejado no diagrama de sequencia, linha cheia = metodo, resposta do metodo volta trasejada
+espaçamento da figura para a legenda
+subtitulos negrito
+referencial teorico da area, software de gestao de rh e aplicaçao militar
+retorno de mensagem , pasar uma introduçao da mensagem, msg_erroConexaoBanco
+nome do caso de sequencia tem que estar no topo do mesmo
+informar retorno sempre, e com a linha pontilhada - cadastro de sigla
+fazer as classes de persistencias e colocar nos diagramas de sequencia
