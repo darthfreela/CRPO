@@ -1,0 +1,26 @@
+Guilherme -> revisar Caso de Uso - retirar Validar Login
+No controle login tem que ter metodo recuperar senha gerar link enviado por email
+
+Elimar -> Revisar Casos de Uso = Só dixar um balão ou fazer um caso de uso para cada balão e rever Fluxos
+
+
+
+
+GERAL
+
+Fazer Diagrama Clase de Interface Gráfica
+
+Verificar se todos os Metodos do diagrama de Sequencia estão no diagrama de Classe
+
+Verificar Diagrama de Sequencia - O tipo de retorno do erro = [Erro]Retorna erro
+
+Nos Casos de Uso e Diagrama de Sequencia, no lugar de UC, o padrão do nome = Caso de Uso - Login, Diagrama de Sequencia - Login 
+
+Alterar nomes no Diagrama de Classe iguais aos dos Requisitos
+
+No Diagrama de Sequencia fazer Clases Interface, Controler e Model(Persistencia)
+
+Revisar Lançamento de Férias retira Aprovação, Criar Classe Generica de Aprovação
+
+
+
